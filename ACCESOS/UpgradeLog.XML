@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="ACCESOS CLUB">
+</Property><Property Name="Archivo de la solución" Value="F:\CLUB.NET\ACCESOS\ACCESOS CLUB.sln">
+</Property><Property Name="Archivo de opciones de usuario" Value="F:\CLUB.NET\ACCESOS\ACCESOS CLUB.suo">
+</Property><Property Name="Date" Value="viernes, 28 de marzo de 2014">
+</Property><Property Name="Time" Value="14:11 p.m.">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="ACCESOS CLUB.sln" Description="La copia C:\copia de seguridad\Backup\ACCESOS CLUB.sln del archivo se ha realizado correctamente">
+</Event><Event ErrorLevel="0" Project="" Source="ACCESOS CLUB.suo" Description="La copia C:\copia de seguridad\Backup\ACCESOS CLUB.suo del archivo se ha realizado correctamente">
+</Event><Event ErrorLevel="0" Project="RENTA EQUIPO" Source="RENTA EQUIPO.vbproj" Description="Se realizó correctamente la copia de seguridad del archivo de proyecto C:\copia de seguridad\Backup\RENTA EQUIPO.vbproj">
+</Event><Event ErrorLevel="0" Project="RENTA EQUIPO" Source="RENTA EQUIPO.vbproj.user" Description="La copia de seguridad C:\copia de seguridad\Backup\RENTA EQUIPO.vbproj.user del archivo se ha creado correctamente">
+</Event><Event ErrorLevel="0" Project="RENTA EQUIPO" Source="AssemblyInfo.vb" Description="Se realizó correctamente la copia de seguridad del archivo C:\copia de seguridad\Backup\AssemblyInfo.vb">
+</Event><Event ErrorLevel="0" Project="RENTA EQUIPO" Source="RentaEquipo.vb" Description="Se realizó correctamente la copia de seguridad del archivo C:\copia de seguridad\Backup\RentaEquipo.vb">
+</Event><Event ErrorLevel="0" Project="RENTA EQUIPO" Source="RentaEquipo.resx" Description="Se realizó correctamente la copia de seguridad del archivo C:\copia de seguridad\Backup\RentaEquipo.resx">
+</Event><Event ErrorLevel="0" Project="RENTA EQUIPO" Source="RENTA EQUIPO.vbproj" Description="Proyecto convertido correctamente">
+</Event><Event ErrorLevel="3" Project="RENTA EQUIPO" Source="RENTA EQUIPO.vbproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="ACCESOS CLUB.sln" Description="La solución se convirtió correctamente">
+</Event><Event ErrorLevel="3" Project="" Source="ACCESOS CLUB.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="RENTA EQUIPO" Source="RENTA EQUIPO.vbproj" Description="Examen completo: no es necesario actualizar los archivos de proyecto.">
+</Event></UpgradeLog>

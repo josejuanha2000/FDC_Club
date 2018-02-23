@@ -1,0 +1,325 @@
+﻿Imports System.Data.OleDb
+Imports System.Data.Odbc
+Imports System.Data.SqlClient
+Imports System.Data
+Imports System.IO
+Imports System.Text
+Public Class Renta_Equipo
+    Dim sqlbuscar_matricula As New SqlCommand
+    Dim sqldrbuscar_matricula As SqlDataReader
+
+    Dim sqlsala As New SqlCommand
+    Dim sqldrsala As SqlDataReader
+    Dim sqlpc_ocupadas As New SqlCommand
+    Dim sqldrpc_ocupadas As SqlDataReader
+
+
+    Dim sw_validar_datos As Integer
+    Private Sub Renta_Equipo_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
+    End Sub
+    Sub buscar_matricula_Bono()
+        sw_validar_datos = 0
+        Try
+            Me.SqlConnection1.Open()
+            sqlbuscar_matricula.CommandText = CommandType.Text
+            sqlbuscar_matricula.CommandText = ("Select * from Bono_hojas where bono_hojas.matricula= '" & TBMatricula.Text & "'")
+            'sqlmatricula.CommandText = ("Select * from Alumnos where Alumnos.matricula = '" & TBMatricula.Text & "'" & "and Alumnos.Periodo_Escolar = '" & CBPeriodo.Text & "'")
+            sqlbuscar_matricula.Connection = Me.SqlConnection1
+            sqldrbuscar_matricula = sqlbuscar_matricula.ExecuteReader()
+            sqldrbuscar_matricula.Read()
+            If sqldrbuscar_matricula.HasRows Then
+                'BTNGuardar.Enabled = True
+                Me.TBNombre.Text = sqldrbuscar_matricula("Nombre")
+                Me.TBCarrera.Text = sqldrbuscar_matricula("Carrera")
+                Me.TBSem.Text = sqldrbuscar_matricula("Semestre")
+                'Me.TBResto_Tiempo.Text = sqldrbuscar_matricula("Resto_horas")
+                If Not IsDBNull(sqldrbuscar_matricula("Resto_Horas")) Then
+                    Me.TBResto_Tiempo.Text = sqldrbuscar_matricula("Resto_Horas")
+                Else
+                    Me.TBResto_Tiempo.Text = ""
+                End If
+
+                Me.TBHoraEntrada.Text = TimeOfDay
+                If Not IsDBNull(sqldrbuscar_matricula("Folio_Recibo")) Then
+                    Me.TBFolio_Recibo.Text = sqldrbuscar_matricula("Folio_Recibo")
+                Else
+                    Me.TBFolio_Recibo.Text = ""
+                End If
+                If sqldrbuscar_matricula("Resto_horas") = 0 Then
+                    MsgBox("Alumno no cuenta con horas renta")
+                    Me.TBMatricula.Focus()
+                    sqldrbuscar_matricula.Close()
+                    Me.SqlConnection1.Close()
+                    sw_validar_datos = 1
+                    Exit Sub
+                End If
+            Else
+                MsgBox("Alumno  no encuentrado, ")
+                Me.TBMatricula.Focus()
+                sqldrbuscar_matricula.Close()
+                Me.SqlConnection1.Close()
+                sw_validar_datos = 1
+                Exit Sub
+            End If
+            sqldrbuscar_matricula.Close()
+            Me.SqlConnection1.Close()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+
+    End Sub
+    Sub Salas()
+        Me.SqlConnection1.Open()
+        sqlsala.CommandText = CommandType.Text
+        sqlsala.CommandText = ("Select Sala,Cantidad_Pc  from Salas_Cetia where Salas_Cetia.Sala= '" & CBSalas.Text & "'")
+        'sqlmatricula.CommandText = ("Select * from Alumnos where Alumnos.matricula = '" & TBMatricula.Text & "'" & "and Alumnos.Periodo_Escolar = '" & CBPeriodo.Text & "'")
+        sqlsala.Connection = Me.SqlConnection1
+        sqldrsala = sqlsala.ExecuteReader()
+        sqldrsala.Read()
+        While sqldrsala.Read()
+
+        End While
+
+    End Sub
+    Sub pc_ocupadas()
+        Try
+            Me.SqlConnection1.Open()
+            sqlpc_ocupadas.CommandText = CommandType.Text
+            sqlpc_ocupadas.CommandText = ("Select Sala,No_PC,Hora_Entrada from Renta_Equipo where Renta_Equipo.sala='" & CBSalas.Text & "'")
+            'sqlpc_ocupadas.CommandText = ("Select  * from Renta_Equipo  where Renta_Equipo.sala='" & CBSalas.Text & "'" & "ORDER BY SALA DESC")
+            'sqlmatricula.CommandText = ("Select * from Alumnos where Alumnos.matricula = '" & TBMatricula.Text & "'" & "and Alumnos.Periodo_Escolar = '" & CBPeriodo.Text & "'")
+            sqlpc_ocupadas.Connection = Me.SqlConnection1
+
+            'sqldrpc_ocupadas = sqlpc_ocupadas.ExecuteReader
+            'sqldrpc_ocupadas.Read()
+
+            Dim Equipo_pc As String = "Btn"
+            Dim CONT_EQ As Integer = 0
+            'Dim desactivar_pc As String
+            Dim recordcount As Integer = 0
+            Dim da As New SqlDataAdapter
+            Dim dt As New DataTable
+            da = New SqlDataAdapter(sqlpc_ocupadas)
+            'dt = New DataTable
+            da.Fill(dt)
+            For Each row As DataRow In dt.Rows
+                If recordcount >= 1 Then
+                    sqldrpc_ocupadas = sqlpc_ocupadas.ExecuteReader
+                    sqldrpc_ocupadas.Read()
+                    'MsgBox("No_pc")
+                    ' MsgBox(CONT_EQ)
+                End If
+                recordcount = recordcount + 1
+            Next
+
+            While sqldrpc_ocupadas.Read = True
+                If sqldrpc_ocupadas("No_PC") <> 0 And Not IsDBNull(sqldrpc_ocupadas("Hora_Entrada")) Then
+                    'desactivar_pc = Equipo_pc + Str(CONT_EQ) + ".enable" + " = False"
+                    CONT_EQ = sqldrpc_ocupadas("No_pc")
+                    'Dim pc As String = Equipo_pc + Str(CONT_EQ)
+                    If CONT_EQ = 1 Then
+                        Btn1.Enabled = False
+                    End If
+                    If CONT_EQ = 2 Then
+                        Btn2.Enabled = False
+                    End If
+                    If CONT_EQ = 3 Then
+                        Btn3.Enabled = False
+                    End If
+                    If CONT_EQ = 4 Then
+                        Btn4.Enabled = False
+                    End If
+                    If CONT_EQ = 5 Then
+                        Btn5.Enabled = False
+                    End If
+                    If CONT_EQ = 6 Then
+                        Btn6.Enabled = False
+                    End If
+
+                    'CONT_EQ = CONT_EQ + 1
+                    'Dim SALA As Integer
+                    'Select Case SALA
+                    '    Case 1
+                    'Btn1.Enabled = False
+                    '    Case 2
+                    'Btn1.Enabled = False
+                    'End Select
+                    'MsgBox(desactivar_pc)
+                    MsgBox(CONT_EQ)
+                End If
+            End While
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+    End Sub
+    Private Sub TBMatricula_KeyPress(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TBMatricula.KeyPress
+        If Char.IsDigit(e.KeyChar) Then
+            e.Handled = False
+        ElseIf Char.IsControl(e.KeyChar) Then
+            e.Handled = False
+        Else
+            e.Handled = True
+            'RadioButtonCarta.Focus()
+        End If
+        If Asc(e.KeyChar) = 13 Then
+            Call buscar_matricula_Bono()
+            If sw_validar_datos = 0 Then
+                Me.CBSalas.Focus()
+            Else
+                ' BtnGuardar.Enabled = True
+                ' TBNombre.Enabled = True
+                ' CBSemestre.Enabled = True
+                ' CBCarrera.Enabled = True
+                ' TBTotalHojas.Enabled = True
+                ' TBTotalHoras.Enabled = True
+                ' TBFolio.Enabled = True
+                ' Call LIMPIAR_CAMPOS()
+                ' TBNombre.Focus()
+            End If
+        End If
+    End Sub
+    Sub pc_asignadas()
+        Try
+            Me.SqlConnection1.Open()
+            sqlpc_ocupadas.CommandText = CommandType.Text
+            sqlpc_ocupadas.CommandText = ("Select Sala,No_PC,Hora_Entrada from Renta_Equipo where Renta_Equipo.sala='" & CBSalas.Text & "'")
+            'sqlpc_ocupadas.CommandText = ("Select  * from Renta_Equipo  where Renta_Equipo.sala='" & CBSalas.Text & "'" & "ORDER BY SALA DESC")
+            'sqlmatricula.CommandText = ("Select * from Alumnos where Alumnos.matricula = '" & TBMatricula.Text & "'" & "and Alumnos.Periodo_Escolar = '" & CBPeriodo.Text & "'")
+            sqlpc_ocupadas.Connection = Me.SqlConnection1
+            sqldrpc_ocupadas = sqlpc_ocupadas.ExecuteReader
+            sqldrpc_ocupadas.Read()
+            Dim Equipo_pc As String = "Btn"
+            Dim CONT_EQ As Integer = 0
+            'Dim desactivar_pc As String
+            Dim recordcount As Integer = 0
+            Dim da As New SqlDataAdapter
+            'Dim dt As New DataTable
+            'da = New SqlDataAdapter(sqlpc_ocupadas)
+            'da.Fill(dt)
+            While sqldrpc_ocupadas.Read()
+                ' If (dt.Rows.Count > 0) Then
+                If sqldrpc_ocupadas("No_PC") <> 0 And Not IsDBNull(sqldrpc_ocupadas("Hora_Entrada")) Then
+                    'desactivar_pc = Equipo_pc + Str(CONT_EQ) + ".enable" + " = False"
+                    CONT_EQ = sqldrpc_ocupadas("No_pc")
+                    'Dim pc As String = Equipo_pc + Str(CONT_EQ)
+                    If CONT_EQ = 1 Then
+                        Btn1.Enabled = False
+                    End If
+                    If CONT_EQ = 2 Then
+                        Btn2.Enabled = False
+                    End If
+                    If CONT_EQ = 3 Then
+                        Btn3.Enabled = False
+                    End If
+                    If CONT_EQ = 4 Then
+                        Btn4.Enabled = False
+                    End If
+                    If CONT_EQ = 5 Then
+                        Btn5.Enabled = False
+                    End If
+                    If CONT_EQ = 6 Then
+                        Btn6.Enabled = False
+                    End If
+
+                    'CONT_EQ = CONT_EQ + 1
+                    'Dim SALA As Integer
+                    'Select Case SALA
+                    '    Case 1
+                    'Btn1.Enabled = False
+                    '    Case 2
+                    'Btn1.Enabled = False
+                    'End Select
+                    'MsgBox(desactivar_pc)
+                    MsgBox(CONT_EQ)
+
+                End If
+                ' End If
+            End While
+            sqldrpc_ocupadas.Close()
+
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+    End Sub
+    Dim sqlbusqueda As String
+    Public ORDER_BD As SqlCommand
+    Private D_TABLE As DataTable
+    Private D_ADAPTER As SqlDataAdapter
+    Dim seleccion As Integer
+    Sub equipo_asignado()
+
+        Try
+            Me.SqlConnection1.Open()
+            'sqlbusqueda = ("SELECT * FROM Litigio WHERE " & TBFolioLitigio.Text & "LIKE" & seleccion & "'ORDER BY FOLIO_LITIGIO'")
+            'sqlmatricula_resultado.CommandText = ("Select * from solicitud where solicitud.matricula = '" & Frm_Solicitud.TBMatricula.Text & "'" & "and solicitud.Periodo_Escolar = '" & Frm_Solicitud.CBPeriodo.Text & "'" & "AND ID = '" & Frm_Solicitud.TBID.Text & "'")
+            sqlbusqueda = ("Select Sala,No_PC,Hora_Entrada from Renta_Equipo where Renta_Equipo.sala='" & CBSalas.Text & "'")
+
+            ORDER_BD = New SqlCommand(sqlbusqueda, Me.SqlConnection1)
+            ORDER_BD.CommandType = CommandType.Text
+            ORDER_BD.ExecuteNonQuery()
+            D_ADAPTER = New SqlDataAdapter(ORDER_BD)
+            D_TABLE = New DataTable
+            D_ADAPTER.Fill(D_TABLE)
+            'DataGridViewLitigio.DataSource = D_TABLE
+            Dim CONT_EQ As Integer = 0
+            Dim fila As Integer = -1
+            fila = D_TABLE.Rows.Count
+
+            MsgBox("fila")
+            While fila >= 0
+                If sqldrpc_ocupadas("No_PC") <> 0 And Not IsDBNull(sqldrpc_ocupadas("Hora_Entrada")) Then
+                    CONT_EQ = sqldrpc_ocupadas("No_pc")
+
+                    'Dim pc As String = Equipo_pc + Str(CONT_EQ)
+                    If CONT_EQ = 1 Then
+                        Btn1.Enabled = False
+                    End If
+                    If CONT_EQ = 2 Then
+                        Btn2.Enabled = False
+                    End If
+                    If CONT_EQ = 3 Then
+                        Btn3.Enabled = False
+                    End If
+                    If CONT_EQ = 4 Then
+                        Btn4.Enabled = False
+                    End If
+                    If CONT_EQ = 5 Then
+                        Btn5.Enabled = False
+                    End If
+                    If CONT_EQ = 6 Then
+                        Btn6.Enabled = False
+                    End If
+                End If
+            End While
+
+            'If D_TABLE.Rows.Count > 0 Then
+
+            'DateTimePicker1.Text = D_TABLE.Rows(0)("Fecha_Asesoria_L")
+            'TBFolioLitigio.Text = D_TABLE.Rows(0)("folio_litigio")
+            'TBNombre_Solicitante_Litigio.Text = D_TABLE.Rows(0)("Nombre_Solicitante_L")
+            'TBDomicilio.Text = D_TABLE.Rows(0)("Domicilio_L")
+            'TBColonia.Text = D_TABLE.Rows(0)("Colonia_L")
+            'TBMunicipio.Text = D_TABLE.Rows(0)("Mpio_L")
+            'TBEdo.Text = D_TABLE.Rows(0)("Edo_L")
+            'TBOficina.Text = D_TABLE(0)("Tel_Oficina_L")
+            'TBCelular.Text = D_TABLE(0)("Tel_Celular_L")
+            'TBE_mail.Text = D_TABLE(0)("E_MAIL_L")
+            'CBEdo_Civil.Text = D_TABLE(0)("Edo_Civil_L")
+            'TBOcupacion.Text = D_TABLE(0)("Ocupacion_L")
+            'TBAsuntoLitigio.Text = D_TABLE(0)("Asunto_L")
+            'TBMediadorL.Text = D_TABLE(0)("Mediador_L")
+            'BtnActualizar.Enabled = True
+
+            'End If
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+        Me.SqlConnection1.Close()
+    End Sub
+    Private Sub CBSalas_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CBSalas.SelectedIndexChanged
+        Call pc_asignadas()
+    End Sub
+End Class

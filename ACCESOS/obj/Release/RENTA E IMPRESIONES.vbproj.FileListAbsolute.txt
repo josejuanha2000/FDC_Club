@@ -1,0 +1,12 @@
+F:\CLUB.NET\ACCESOS\bin\ACCESOS.exe
+F:\CLUB.NET\ACCESOS\bin\ACCESOS.xml
+F:\CLUB.NET\ACCESOS\obj\Release\ResolveAssemblyReference.cache
+F:\CLUB.NET\ACCESOS\obj\Release\ACCESOS.Alta_Bono.resources
+F:\CLUB.NET\ACCESOS\obj\Release\ACCESOS.Impresion_Hojas.resources
+F:\CLUB.NET\ACCESOS\obj\Release\ACCESOS.LoginForm1.resources
+F:\CLUB.NET\ACCESOS\obj\Release\ACCESOS.Resources.resources
+F:\CLUB.NET\ACCESOS\obj\Release\ACCESOS.RentaEquipo.resources
+F:\CLUB.NET\ACCESOS\obj\Release\ACCESOS.Renta_Equipo.resources
+F:\CLUB.NET\ACCESOS\obj\Release\RENTA E IMPRESIONES.vbproj.GenerateResource.Cache
+F:\CLUB.NET\ACCESOS\obj\Release\ACCESOS.exe
+F:\CLUB.NET\ACCESOS\obj\Release\ACCESOS.xml
