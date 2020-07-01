@@ -17,22 +17,26 @@ Public Class Impresion_Hojas
     Dim HOJAS_CAPTURADAS As Integer = 0
     Dim TOTAL_HOJAS As Integer = 0
     Dim SW As Integer = 0
+    Dim sw_incidencia As Integer = 0
     Dim SW_VALIDAR_MATRICULA As Integer = 0
     Dim Inventario_Existente_Carta As Integer = 0
     Dim Inventario_Existente_Oficio As Integer = 0
     Dim Inventario_Existente_Mermas As Integer = 0
     Dim SW_INVENTARIO As Integer = 0
+    Dim sqlbuscar_matricula As New SqlCommand
+    Dim sqldrbuscar_matricula As SqlDataReader
     Private Sub Impresion_Hojas_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         'Call buscar_matricula()
     End Sub
     Sub buscar_matricula()
+        Call limpiar_campos_incidencia()
         Call validacion_existencia_hojas()
         If SW_INVENTARIO = 0 Then
             Call cargar_lisview()
             Try
                 Me.SqlConnection1.Open()
                 sqlmatricula.CommandText = CommandType.Text
-                sqlmatricula.CommandText = ("Select * from Bono_hojas where bono_hojas.matricula= '" & TBMatricula.Text & "'")
+                sqlmatricula.CommandText = ("Select * from Bono_hojas where bono_hojas.matricula= '" & TBMatricula.Text & "'" & "order by Resto_Hojas Desc")
                 'sqlmatricula.CommandText = ("Select * from Alumnos where Alumnos.matricula = '" & TBMatricula.Text & "'" & "and Alumnos.Periodo_Escolar = '" & CBPeriodo.Text & "'")
                 sqlmatricula.Connection = Me.SqlConnection1
                 sqldrmatricula = sqlmatricula.ExecuteReader()
@@ -65,7 +69,7 @@ Public Class Impresion_Hojas
                     ' If IsDBNull(sqldrmatricula("turno")) Then
                     ' Me.CBTurno.Text = " "
                 Else
-                    MsgBox("No existe registro de Alumnos")
+                    MsgBox("No existe registro de Alumnos, favor de pedir comprobante.")
                     sqldrmatricula.Close()
                     Me.SqlConnection1.Close()
                     SW_VALIDAR_MATRICULA = 1
@@ -81,6 +85,34 @@ Public Class Impresion_Hojas
         Else
             Call LIMPIAR_CAMPOS()
         End If
+    End Sub
+    Sub buscar_incidencia_alumno()
+        sw_incidencia = 0
+        Try
+            Me.SqlConnection1.Open()
+            sqlbuscar_matricula.CommandText = CommandType.Text
+            sqlbuscar_matricula.CommandText = ("Select * from Incidencias where incidencias.matricula= '" & TBMatricula.Text & "'")
+            sqlbuscar_matricula.Connection = Me.SqlConnection1
+            sqldrbuscar_matricula = sqlbuscar_matricula.ExecuteReader()
+            sqldrbuscar_matricula.Read()
+            If sqldrbuscar_matricula.HasRows Then
+                sw_incidencia = 1
+                BTNGuardar.Enabled = True
+                'Me.TBNombre.Text = sqldrbuscar_matricula("Nombre")
+                'Me.TBCarrera.Text = sqldrbuscar_matricula("Carrera")
+                'Me.TBSemestre.Text = sqldrbuscar_matricula("Semestre")
+                Me.TB_Tipo_Incidencia.Text = sqldrbuscar_matricula("Tipo_Incidencia")
+                Me.TB_Fecha_Incidencia.Text = sqldrbuscar_matricula("Fecha_Incidencia")
+                Me.TB_Hora_Incidencia.Text = sqldrbuscar_matricula("Hora_Incidencia")
+                MsgBox("Alumno tiene suspendido el servicio por incidencia, Favor de verificar en Descripcion.! ")
+                Me.TB_Descripcion_Incidencia.Text = sqldrbuscar_matricula("Descripcion_Incidencia")
+                Me.BTNGuardar.Enabled = False
+            End If
+            sqldrbuscar_matricula.Close()
+            Me.SqlConnection1.Close()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
     End Sub
     Sub registro_alumno()
         Call CALCULAR_HOJAS()
@@ -285,7 +317,12 @@ Public Class Impresion_Hojas
             MsgBox("No se pueden ingresar letra")
         End If
         If Asc(e.KeyChar) = 13 Then
+
+            'Call buscar_incidencia_alumno()
+
+            'If sw_incidencia = 0 Then
             Call buscar_matricula()
+
             If SW_VALIDAR_MATRICULA = 1 Then
                 'Call LIMPIAR_CAMPOS()
                 TBMatricula.Focus()
@@ -295,11 +332,23 @@ Public Class Impresion_Hojas
                     TBMatricula.Focus()
                     Return
                 Else
+                    TBHojas_Carta.Enabled = True
+                    TBHojas_Oficio.Enabled = True
+                    TBHojas_Merma.Enabled = True
                     TBHojas_Carta.Focus()
+                    Call buscar_incidencia_alumno()
+                    Me.TBMatricula.Focus()
+
                 End If
             End If
-            ' 'RadioButtonCarta.Focus()
+
+            ''RadioButtonCarta.Focus()
         End If
+        'Else
+
+        'TBMatricula.Focus()
+        'Return
+        'End If
 
     End Sub
     Private Sub BTNGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTNGuardar.Click
@@ -326,9 +375,19 @@ Public Class Impresion_Hojas
         TBTotal.Text = 0
         TBMatricula.Focus()
         ListViewHistorial.Items.Clear()
+        TB_Tipo_Incidencia.Text = ""
+        TB_Fecha_Incidencia.Text = ""
+        TB_Hora_Incidencia.Text = ""
+    End Sub
+    Sub limpiar_campos_incidencia()
+        TB_Tipo_Incidencia.Text = ""
+        TB_Descripcion_Incidencia.Text = ""
+        TB_Fecha_Incidencia.Text = ""
+        TB_Hora_Incidencia.Text = ""
     End Sub
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Close()
     End Sub
-   
+
+
 End Class

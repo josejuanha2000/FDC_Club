@@ -22,16 +22,16 @@ Partial Class Registro_Mermas
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.BtnActualizar = New System.Windows.Forms.Button
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox
-        Me.Label3 = New System.Windows.Forms.Label
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.CB_Hojas_Oficio = New System.Windows.Forms.ComboBox
-        Me.CB_hojas_carta = New System.Windows.Forms.ComboBox
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox
-        Me.TB_Existencia_Oficio = New System.Windows.Forms.TextBox
-        Me.TB_Existencia_cta = New System.Windows.Forms.TextBox
-        Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection
+        Me.BtnActualizar = New System.Windows.Forms.Button()
+        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.CB_Hojas_Oficio = New System.Windows.Forms.ComboBox()
+        Me.CB_hojas_carta = New System.Windows.Forms.ComboBox()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.TB_Existencia_Oficio = New System.Windows.Forms.TextBox()
+        Me.TB_Existencia_cta = New System.Windows.Forms.TextBox()
+        Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
@@ -128,8 +128,7 @@ Partial Class Registro_Mermas
         '
         'SqlConnection1
         '
-        Me.SqlConnection1.ConnectionString = "Data Source=COLMASQLFDC01\FACDYCDES;Initial Catalog=CETIA;Integrated Security=Tru" & _
-            "e"
+        Me.SqlConnection1.ConnectionString = "Data Source=148.234.110.22;Initial Catalog=LIBRO_OFICIOS;User ID=sa"
         Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
         '
         'Registro_Mermas

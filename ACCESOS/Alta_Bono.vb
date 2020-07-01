@@ -11,10 +11,12 @@ Public Class Alta_Bono
     Sub buscar_matricula_Bono()
         SW_VALIDAR_DATOS = 0
         'Call cargar_lisview()
+        Dim agregar_bono As String
+
         Try
             Me.SqlConnection1.Open()
             sqlbono_matricula.CommandText = CommandType.Text
-            sqlbono_matricula.CommandText = ("Select * from Bono_hojas where bono_hojas.matricula= '" & TBMatricula.Text & "'")
+            sqlbono_matricula.CommandText = ("Select * from Bono_hojas where bono_hojas.matricula= '" & TBMatricula.Text & "'" & "order by Resto_Hojas Desc")
             'sqlmatricula.CommandText = ("Select * from Alumnos where Alumnos.matricula = '" & TBMatricula.Text & "'" & "and Alumnos.Periodo_Escolar = '" & CBPeriodo.Text & "'")
             sqlbono_matricula.Connection = Me.SqlConnection1
             sqldrbono_matricula = sqlbono_matricula.ExecuteReader()
@@ -35,6 +37,13 @@ Public Class Alta_Bono
                     'BTNGuardar.Enabled = False
                     'SW_VALIDAR_DATOS = 1
                     MsgBox("Alumno con terminación de Bono")
+                    agregar_bono = MsgBox("Desea agregar un nuevo Bono a esta cuenta?", MsgBoxStyle.YesNo + MsgBoxStyle.Information, "Agregar")
+                    If agregar_bono = vbYes Then
+                        'Call registro_alumno()
+                        Call activar_campos()
+
+                    End If
+
                     sqldrbono_matricula.Close()
                     Me.SqlConnection1.Close()
                     Exit Sub
@@ -139,6 +148,16 @@ Public Class Alta_Bono
         TBFolio.Enabled = False
         TBNombre.Focus()
     End Sub
+    Sub activar_campos()
+        BtnGuardar.Enabled = True
+        'TBNombre.Enabled = False
+        'CBSemestre.Enabled = False
+        'CBCarrera.Enabled = False
+        TBTotalHojas.Enabled = True
+        TBTotalHoras.Enabled = True
+        TBFolio.Enabled = True
+        TBNombre.Focus()
+    End Sub
     Private Sub BtnGuardar_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BtnGuardar.Click
         If TBTotalHojas.Text = 0 Then
             MsgBox("Asigne numero de HOJAS...", , "Hojas")
@@ -154,7 +173,9 @@ Public Class Alta_Bono
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Close()
     End Sub
+    Sub Asignar_Nuevo_Bono()
 
+    End Sub
     Private Sub Alta_Bono_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
     End Sub

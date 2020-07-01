@@ -41,8 +41,20 @@ Public Class Menu_Cetia
         'End If
     End Sub
 
-    Private Sub RegistroEntradaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistroEntradaToolStripMenuItem.Click
+    Private Sub PrestamoDeSalaL2ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PrestamoDeSalaL2ToolStripMenuItem.Click
+        Registro_Clase.Show()
+    End Sub
+
+    Private Sub AccesoASALAL1ToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AccesoASALAL1ToolStripMenuItem.Click
         Registro_Entrada.Show()
+    End Sub
+
+    Private Sub IncidenciasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles IncidenciasToolStripMenuItem.Click
+        Registro_Incidencias.Show()
+    End Sub
+
+    Private Sub FechasAgendadasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles FechasAgendadasToolStripMenuItem.Click
+        Fechas_Agendadas.Show()
 
     End Sub
 End Class

@@ -38,12 +38,12 @@ Partial Class Registro_Entrada
         Me.GBClave = New System.Windows.Forms.GroupBox()
         Me.LblMatricula = New System.Windows.Forms.Label()
         Me.TBMatricula = New System.Windows.Forms.TextBox()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.BTNGuardar = New System.Windows.Forms.Button()
         Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.CBEquipos = New System.Windows.Forms.ComboBox()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BTNGuardar = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GBBono.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -83,6 +83,7 @@ Partial Class Registro_Entrada
         '
         'CBSalas
         '
+        Me.CBSalas.Enabled = False
         Me.CBSalas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CBSalas.Items.AddRange(New Object() {"IL1", "IL2", "IL3"})
         Me.CBSalas.Location = New System.Drawing.Point(23, 29)
@@ -128,6 +129,7 @@ Partial Class Registro_Entrada
         '
         'TBSem
         '
+        Me.TBSem.Enabled = False
         Me.TBSem.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TBSem.Location = New System.Drawing.Point(227, 77)
         Me.TBSem.Name = "TBSem"
@@ -145,6 +147,7 @@ Partial Class Registro_Entrada
         '
         'TBCarrera
         '
+        Me.TBCarrera.Enabled = False
         Me.TBCarrera.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TBCarrera.Location = New System.Drawing.Point(72, 75)
         Me.TBCarrera.Name = "TBCarrera"
@@ -162,6 +165,7 @@ Partial Class Registro_Entrada
         '
         'TBNombre
         '
+        Me.TBNombre.Enabled = False
         Me.TBNombre.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TBNombre.Location = New System.Drawing.Point(72, 42)
         Me.TBNombre.Name = "TBNombre"
@@ -206,37 +210,16 @@ Partial Class Registro_Entrada
         Me.TBMatricula.Size = New System.Drawing.Size(107, 20)
         Me.TBMatricula.TabIndex = 1
         '
-        'Button1
-        '
-        Me.Button1.Image = Global.ACCESOS.My.Resources.Resources.boton_salir
-        Me.Button1.Location = New System.Drawing.Point(12, 289)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(61, 55)
-        Me.Button1.TabIndex = 45
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'BTNGuardar
-        '
-        Me.BTNGuardar.BackColor = System.Drawing.SystemColors.Control
-        Me.BTNGuardar.Enabled = False
-        Me.BTNGuardar.Image = Global.ACCESOS.My.Resources.Resources.boton_guardar2
-        Me.BTNGuardar.Location = New System.Drawing.Point(647, 289)
-        Me.BTNGuardar.Name = "BTNGuardar"
-        Me.BTNGuardar.Size = New System.Drawing.Size(68, 58)
-        Me.BTNGuardar.TabIndex = 44
-        Me.BTNGuardar.UseVisualStyleBackColor = False
-        '
         'SqlConnection1
         '
-        Me.SqlConnection1.ConnectionString = "Data Source=COLMASQLFDC01\FACDYCDES;Initial Catalog=CETIA;Integrated Security=Tru" & _
-    "e"
+        Me.SqlConnection1.ConnectionString = "Data Source=148.234.110.22;Initial Catalog=CETIA;User ID=sa;Password=Facdyc2020"
         Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
         '
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.GroupBox4)
         Me.GroupBox2.Controls.Add(Me.GBBono)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 1)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 4)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(719, 279)
         Me.GroupBox2.TabIndex = 46
@@ -262,6 +245,26 @@ Partial Class Registro_Entrada
         Me.CBEquipos.Size = New System.Drawing.Size(86, 24)
         Me.CBEquipos.TabIndex = 13
         Me.CBEquipos.Tag = ""
+        '
+        'Button1
+        '
+        Me.Button1.Image = Global.ACCESOS.My.Resources.Resources.boton_salir
+        Me.Button1.Location = New System.Drawing.Point(12, 289)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(61, 55)
+        Me.Button1.TabIndex = 45
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'BTNGuardar
+        '
+        Me.BTNGuardar.BackColor = System.Drawing.SystemColors.Control
+        Me.BTNGuardar.Enabled = False
+        Me.BTNGuardar.Image = Global.ACCESOS.My.Resources.Resources.boton_guardar2
+        Me.BTNGuardar.Location = New System.Drawing.Point(647, 289)
+        Me.BTNGuardar.Name = "BTNGuardar"
+        Me.BTNGuardar.Size = New System.Drawing.Size(68, 58)
+        Me.BTNGuardar.TabIndex = 44
+        Me.BTNGuardar.UseVisualStyleBackColor = False
         '
         'Registro_Entrada
         '

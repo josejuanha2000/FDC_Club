@@ -101,8 +101,7 @@ Partial Class Login_Impresiones
         '
         'SqlConnection1
         '
-        Me.SqlConnection1.ConnectionString = "Data Source=COLMASQLFDC01\FACDYCDES;Initial Catalog=CETIA;Integrated Security=Tru" & _
-    "e"
+        Me.SqlConnection1.ConnectionString = "Data Source=148.234.110.22;Initial Catalog=CETIA;User ID=sa;Password=Facdyc2020"
         Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
         '
         'Login_Impresiones

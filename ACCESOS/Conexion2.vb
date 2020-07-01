@@ -7,7 +7,7 @@ Public Class Conexion2
     Protected cnn As New SqlConnection
     Protected Function conectado()
         Try
-            cnn = New SqlConnection("Data Source=COLMASQLFDC01\FACDYCDES;Initial Catalog=CETIA;Integrated Security=True")
+            cnn = New SqlConnection("Data Source=148.234.110.22;Initial Catalog=CETIA;User ID=sa;Password=Facdyc2020")
             cnn.Open()
             Return True
         Catch ex As Exception

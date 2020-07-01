@@ -34,3 +34,72 @@ F:\FDC_Club\ACCESOS\obj\Debug\ACCESOS.RentaEquipo.resources
 F:\FDC_Club\ACCESOS\obj\Debug\ACCESOS.Renta_Equipo.resources
 F:\FDC_Club\ACCESOS\obj\Debug\RENTA E IMPRESIONES.vbproj.GenerateResource.Cache
 F:\FDC_Club\ACCESOS\obj\Debug\ACCESOS.Registro_Entrada.resources
+F:\FDC_Club\ACCESOS\obj\Debug\ACCESOS.Registro_Incidencias.resources
+F:\_\FACDYC_Club\ACCESOS\bin\ACCESOS.exe
+F:\_\FACDYC_Club\ACCESOS\bin\ACCESOS.pdb
+F:\_\FACDYC_Club\ACCESOS\bin\ACCESOS.xml
+F:\_\FACDYC_Club\ACCESOS\obj\Debug\RENTA E IMPRESIONES.vbprojAssemblyReference.cache
+F:\_\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Alta_Bono.resources
+F:\_\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Login_Impresiones.resources
+F:\_\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Registro_Entrada.resources
+F:\_\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Registro_Incidencias.resources
+F:\_\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Registro_Mermas.resources
+F:\_\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Impresion_Hojas.resources
+F:\_\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Inventario_hojas.resources
+F:\_\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.LoginForm1.resources
+F:\_\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Menu_Cetia.resources
+F:\_\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Resources.resources
+F:\_\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.RentaEquipo.resources
+F:\_\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Renta_Equipo.resources
+F:\_\FACDYC_Club\ACCESOS\obj\Debug\RENTA E IMPRESIONES.vbproj.GenerateResource.cache
+F:\_\FACDYC_Club\ACCESOS\obj\Debug\RENTA E IMPRESIONES.vbproj.CoreCompileInputs.cache
+F:\_\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.exe
+F:\_\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.xml
+F:\_\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.pdb
+F:\_\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Registro_Clase.resources
+Y:\__\FACDYC_Club\ACCESOS\bin\ACCESOS.exe
+Y:\__\FACDYC_Club\ACCESOS\bin\ACCESOS.pdb
+Y:\__\FACDYC_Club\ACCESOS\bin\ACCESOS.xml
+Y:\__\FACDYC_Club\ACCESOS\obj\Debug\RENTA E IMPRESIONES.vbprojAssemblyReference.cache
+Y:\__\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Alta_Bono.resources
+Y:\__\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Login_Impresiones.resources
+Y:\__\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Registro_Clase.resources
+Y:\__\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Registro_Entrada.resources
+Y:\__\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Registro_Incidencias.resources
+Y:\__\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Registro_Mermas.resources
+Y:\__\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Impresion_Hojas.resources
+Y:\__\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Inventario_hojas.resources
+Y:\__\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.LoginForm1.resources
+Y:\__\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Menu_Cetia.resources
+Y:\__\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Resources.resources
+Y:\__\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.RentaEquipo.resources
+Y:\__\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Renta_Equipo.resources
+Y:\__\FACDYC_Club\ACCESOS\obj\Debug\RENTA E IMPRESIONES.vbproj.GenerateResource.cache
+Y:\__\FACDYC_Club\ACCESOS\obj\Debug\RENTA E IMPRESIONES.vbproj.CoreCompileInputs.cache
+Y:\__\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.exe
+Y:\__\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.xml
+Y:\__\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.pdb
+Y:\__\FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Fechas_Agendadas.resources
+W:\VS_FACDYC_Club\ACCESOS\bin\ACCESOS.exe
+W:\VS_FACDYC_Club\ACCESOS\bin\ACCESOS.pdb
+W:\VS_FACDYC_Club\ACCESOS\bin\ACCESOS.xml
+W:\VS_FACDYC_Club\ACCESOS\obj\Debug\RENTA E IMPRESIONES.vbprojAssemblyReference.cache
+W:\VS_FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Alta_Bono.resources
+W:\VS_FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Fechas_Agendadas.resources
+W:\VS_FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Login_Impresiones.resources
+W:\VS_FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Registro_Clase.resources
+W:\VS_FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Registro_Entrada.resources
+W:\VS_FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Registro_Incidencias.resources
+W:\VS_FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Registro_Mermas.resources
+W:\VS_FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Impresion_Hojas.resources
+W:\VS_FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Inventario_hojas.resources
+W:\VS_FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.LoginForm1.resources
+W:\VS_FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Menu_Cetia.resources
+W:\VS_FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Resources.resources
+W:\VS_FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.RentaEquipo.resources
+W:\VS_FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.Renta_Equipo.resources
+W:\VS_FACDYC_Club\ACCESOS\obj\Debug\RENTA E IMPRESIONES.vbproj.GenerateResource.cache
+W:\VS_FACDYC_Club\ACCESOS\obj\Debug\RENTA E IMPRESIONES.vbproj.CoreCompileInputs.cache
+W:\VS_FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.exe
+W:\VS_FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.xml
+W:\VS_FACDYC_Club\ACCESOS\obj\Debug\ACCESOS.pdb

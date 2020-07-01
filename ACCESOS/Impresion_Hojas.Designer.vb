@@ -51,11 +51,17 @@ Partial Class Impresion_Hojas
         Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection()
         Me.GroupBoxMermas = New System.Windows.Forms.GroupBox()
         Me.TBHojas_Merma = New System.Windows.Forms.TextBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.BTNGuardar = New System.Windows.Forms.Button()
+        Me.TB_Descripcion_Incidencia = New System.Windows.Forms.TextBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.TB_Tipo_Incidencia = New System.Windows.Forms.TextBox()
+        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Me.TB_Fecha_Incidencia = New System.Windows.Forms.TextBox()
+        Me.GroupBox6 = New System.Windows.Forms.GroupBox()
+        Me.TB_Hora_Incidencia = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
         Me.GBDatos.SuspendLayout()
         Me.GBClave.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
@@ -63,8 +69,10 @@ Partial Class Impresion_Hojas
         Me.GroupBoxOficio.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBoxMermas.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox4.SuspendLayout()
+        Me.GroupBox5.SuspendLayout()
+        Me.GroupBox6.SuspendLayout()
         Me.SuspendLayout()
         '
         'GBDatos
@@ -78,7 +86,7 @@ Partial Class Impresion_Hojas
         Me.GBDatos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GBDatos.Location = New System.Drawing.Point(12, 68)
         Me.GBDatos.Name = "GBDatos"
-        Me.GBDatos.Size = New System.Drawing.Size(566, 107)
+        Me.GBDatos.Size = New System.Drawing.Size(566, 103)
         Me.GBDatos.TabIndex = 10
         Me.GBDatos.TabStop = False
         Me.GBDatos.Text = "Datos del Alumno:"
@@ -87,7 +95,7 @@ Partial Class Impresion_Hojas
         '
         Me.TBSemestre.Enabled = False
         Me.TBSemestre.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TBSemestre.Location = New System.Drawing.Point(242, 72)
+        Me.TBSemestre.Location = New System.Drawing.Point(400, 70)
         Me.TBSemestre.Name = "TBSemestre"
         Me.TBSemestre.Size = New System.Drawing.Size(48, 20)
         Me.TBSemestre.TabIndex = 5
@@ -95,7 +103,7 @@ Partial Class Impresion_Hojas
         'Label1
         '
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(168, 72)
+        Me.Label1.Location = New System.Drawing.Point(319, 71)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 20)
         Me.Label1.TabIndex = 4
@@ -105,7 +113,7 @@ Partial Class Impresion_Hojas
         '
         Me.TBCarrera.Enabled = False
         Me.TBCarrera.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TBCarrera.Location = New System.Drawing.Point(80, 72)
+        Me.TBCarrera.Location = New System.Drawing.Point(80, 68)
         Me.TBCarrera.Name = "TBCarrera"
         Me.TBCarrera.Size = New System.Drawing.Size(48, 20)
         Me.TBCarrera.TabIndex = 3
@@ -113,7 +121,7 @@ Partial Class Impresion_Hojas
         'LblCarrera
         '
         Me.LblCarrera.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblCarrera.Location = New System.Drawing.Point(16, 74)
+        Me.LblCarrera.Location = New System.Drawing.Point(16, 70)
         Me.LblCarrera.Name = "LblCarrera"
         Me.LblCarrera.Size = New System.Drawing.Size(56, 16)
         Me.LblCarrera.TabIndex = 2
@@ -172,9 +180,10 @@ Partial Class Impresion_Hojas
         Me.ListViewHistorial.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Matricula, Me.Carrera, Me.Semestre, Me.Hojas_Carta, Me.Hojas_Oficio, Me.Hojas_Merma, Me.Fecha_Registro})
         Me.ListViewHistorial.FullRowSelect = True
         Me.ListViewHistorial.GridLines = True
-        Me.ListViewHistorial.Location = New System.Drawing.Point(12, 274)
+        Me.ListViewHistorial.HideSelection = False
+        Me.ListViewHistorial.Location = New System.Drawing.Point(584, 12)
         Me.ListViewHistorial.Name = "ListViewHistorial"
-        Me.ListViewHistorial.Size = New System.Drawing.Size(793, 240)
+        Me.ListViewHistorial.Size = New System.Drawing.Size(501, 303)
         Me.ListViewHistorial.TabIndex = 11
         Me.ListViewHistorial.UseCompatibleStateImageBehavior = False
         Me.ListViewHistorial.View = System.Windows.Forms.View.Details
@@ -213,9 +222,9 @@ Partial Class Impresion_Hojas
         '
         Me.GroupBox1.Controls.Add(Me.TBTotal)
         Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(454, 194)
+        Me.GroupBox1.Location = New System.Drawing.Point(454, 179)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(124, 74)
+        Me.GroupBox1.Size = New System.Drawing.Size(124, 54)
         Me.GroupBox1.TabIndex = 18
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Resto Total:"
@@ -223,7 +232,7 @@ Partial Class Impresion_Hojas
         'TBTotal
         '
         Me.TBTotal.Enabled = False
-        Me.TBTotal.Location = New System.Drawing.Point(16, 26)
+        Me.TBTotal.Location = New System.Drawing.Point(13, 18)
         Me.TBTotal.Multiline = True
         Me.TBTotal.Name = "TBTotal"
         Me.TBTotal.Size = New System.Drawing.Size(102, 28)
@@ -241,15 +250,16 @@ Partial Class Impresion_Hojas
         '
         Me.GroupBoxCarta.Controls.Add(Me.TBHojas_Carta)
         Me.GroupBoxCarta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBoxCarta.Location = New System.Drawing.Point(12, 194)
+        Me.GroupBoxCarta.Location = New System.Drawing.Point(12, 179)
         Me.GroupBoxCarta.Name = "GroupBoxCarta"
-        Me.GroupBoxCarta.Size = New System.Drawing.Size(134, 71)
+        Me.GroupBoxCarta.Size = New System.Drawing.Size(134, 54)
         Me.GroupBoxCarta.TabIndex = 25
         Me.GroupBoxCarta.TabStop = False
         Me.GroupBoxCarta.Text = "Carta:"
         '
         'TBHojas_Carta
         '
+        Me.TBHojas_Carta.Enabled = False
         Me.TBHojas_Carta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TBHojas_Carta.Location = New System.Drawing.Point(18, 26)
         Me.TBHojas_Carta.Name = "TBHojas_Carta"
@@ -261,15 +271,16 @@ Partial Class Impresion_Hojas
         '
         Me.GroupBoxOficio.Controls.Add(Me.TBHojas_Oficio)
         Me.GroupBoxOficio.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBoxOficio.Location = New System.Drawing.Point(152, 194)
+        Me.GroupBoxOficio.Location = New System.Drawing.Point(152, 179)
         Me.GroupBoxOficio.Name = "GroupBoxOficio"
-        Me.GroupBoxOficio.Size = New System.Drawing.Size(134, 71)
+        Me.GroupBoxOficio.Size = New System.Drawing.Size(134, 54)
         Me.GroupBoxOficio.TabIndex = 26
         Me.GroupBoxOficio.TabStop = False
         Me.GroupBoxOficio.Text = "Oficio:"
         '
         'TBHojas_Oficio
         '
+        Me.TBHojas_Oficio.Enabled = False
         Me.TBHojas_Oficio.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TBHojas_Oficio.Location = New System.Drawing.Point(18, 26)
         Me.TBHojas_Oficio.Name = "TBHojas_Oficio"
@@ -289,8 +300,7 @@ Partial Class Impresion_Hojas
         '
         'SqlConnection1
         '
-        Me.SqlConnection1.ConnectionString = "Data Source=COLMASQLFDC01\FACDYCDES;Initial Catalog=CETIA;Integrated Security=Tru" & _
-    "e"
+        Me.SqlConnection1.ConnectionString = "Data Source=148.234.110.22;Initial Catalog=CETIA;User ID=sa;Password=Facdyc2020"
         Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
         '
         'GroupBoxMermas
@@ -298,9 +308,9 @@ Partial Class Impresion_Hojas
         Me.GroupBoxMermas.Controls.Add(Me.TBHojas_Merma)
         Me.GroupBoxMermas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBoxMermas.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.GroupBoxMermas.Location = New System.Drawing.Point(293, 194)
+        Me.GroupBoxMermas.Location = New System.Drawing.Point(293, 179)
         Me.GroupBoxMermas.Name = "GroupBoxMermas"
-        Me.GroupBoxMermas.Size = New System.Drawing.Size(134, 71)
+        Me.GroupBoxMermas.Size = New System.Drawing.Size(134, 54)
         Me.GroupBoxMermas.TabIndex = 29
         Me.GroupBoxMermas.TabStop = False
         Me.GroupBoxMermas.Text = "Mermas:"
@@ -315,45 +325,22 @@ Partial Class Impresion_Hojas
         Me.TBHojas_Merma.TabIndex = 8
         Me.TBHojas_Merma.Text = "0"
         '
-        'GroupBox2
-        '
-        Me.GroupBox2.BackColor = System.Drawing.Color.Khaki
-        Me.GroupBox2.Controls.Add(Me.Label2)
-        Me.GroupBox2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.ForeColor = System.Drawing.Color.Green
-        Me.GroupBox2.Location = New System.Drawing.Point(584, 21)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(221, 47)
-        Me.GroupBox2.TabIndex = 33
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "IMPRESIONES"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Arial Black", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Green
-        Me.Label2.Location = New System.Drawing.Point(55, 22)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(84, 23)
-        Me.Label2.TabIndex = 0
-        Me.Label2.Text = "C E T I A"
-        '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.ACCESOS.My.Resources.Resources.impresora_samsung
-        Me.PictureBox1.Location = New System.Drawing.Point(584, 74)
+        Me.PictureBox1.Location = New System.Drawing.Point(727, 343)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(222, 191)
+        Me.PictureBox1.Size = New System.Drawing.Size(224, 145)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PictureBox1.TabIndex = 32
         Me.PictureBox1.TabStop = False
         '
         'Button1
         '
         Me.Button1.Image = Global.ACCESOS.My.Resources.Resources.boton_salir
-        Me.Button1.Location = New System.Drawing.Point(728, 523)
+        Me.Button1.Location = New System.Drawing.Point(488, 459)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(61, 55)
+        Me.Button1.Size = New System.Drawing.Size(73, 55)
         Me.Button1.TabIndex = 31
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -362,19 +349,105 @@ Partial Class Impresion_Hojas
         Me.BTNGuardar.BackColor = System.Drawing.SystemColors.Control
         Me.BTNGuardar.Enabled = False
         Me.BTNGuardar.Image = Global.ACCESOS.My.Resources.Resources.boton_guardar2
-        Me.BTNGuardar.Location = New System.Drawing.Point(331, 520)
+        Me.BTNGuardar.Location = New System.Drawing.Point(32, 459)
         Me.BTNGuardar.Name = "BTNGuardar"
-        Me.BTNGuardar.Size = New System.Drawing.Size(68, 58)
+        Me.BTNGuardar.Size = New System.Drawing.Size(79, 55)
         Me.BTNGuardar.TabIndex = 30
         Me.BTNGuardar.UseVisualStyleBackColor = False
+        '
+        'TB_Descripcion_Incidencia
+        '
+        Me.TB_Descripcion_Incidencia.Enabled = False
+        Me.TB_Descripcion_Incidencia.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_Descripcion_Incidencia.Location = New System.Drawing.Point(12, 343)
+        Me.TB_Descripcion_Incidencia.Multiline = True
+        Me.TB_Descripcion_Incidencia.Name = "TB_Descripcion_Incidencia"
+        Me.TB_Descripcion_Incidencia.Size = New System.Drawing.Size(566, 110)
+        Me.TB_Descripcion_Incidencia.TabIndex = 34
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.Controls.Add(Me.TB_Tipo_Incidencia)
+        Me.GroupBox4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.ForeColor = System.Drawing.Color.DarkGreen
+        Me.GroupBox4.Location = New System.Drawing.Point(12, 268)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Size = New System.Drawing.Size(155, 47)
+        Me.GroupBox4.TabIndex = 35
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "Tipo Incidencia:"
+        '
+        'TB_Tipo_Incidencia
+        '
+        Me.TB_Tipo_Incidencia.Enabled = False
+        Me.TB_Tipo_Incidencia.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_Tipo_Incidencia.Location = New System.Drawing.Point(6, 19)
+        Me.TB_Tipo_Incidencia.Name = "TB_Tipo_Incidencia"
+        Me.TB_Tipo_Incidencia.Size = New System.Drawing.Size(143, 20)
+        Me.TB_Tipo_Incidencia.TabIndex = 4
+        '
+        'GroupBox5
+        '
+        Me.GroupBox5.Controls.Add(Me.TB_Fecha_Incidencia)
+        Me.GroupBox5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox5.ForeColor = System.Drawing.Color.DarkGreen
+        Me.GroupBox5.Location = New System.Drawing.Point(215, 268)
+        Me.GroupBox5.Name = "GroupBox5"
+        Me.GroupBox5.Size = New System.Drawing.Size(155, 47)
+        Me.GroupBox5.TabIndex = 36
+        Me.GroupBox5.TabStop = False
+        Me.GroupBox5.Text = "Fecha Incidencia:"
+        '
+        'TB_Fecha_Incidencia
+        '
+        Me.TB_Fecha_Incidencia.Enabled = False
+        Me.TB_Fecha_Incidencia.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_Fecha_Incidencia.Location = New System.Drawing.Point(6, 19)
+        Me.TB_Fecha_Incidencia.Name = "TB_Fecha_Incidencia"
+        Me.TB_Fecha_Incidencia.Size = New System.Drawing.Size(143, 20)
+        Me.TB_Fecha_Incidencia.TabIndex = 4
+        '
+        'GroupBox6
+        '
+        Me.GroupBox6.Controls.Add(Me.TB_Hora_Incidencia)
+        Me.GroupBox6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox6.ForeColor = System.Drawing.Color.DarkGreen
+        Me.GroupBox6.Location = New System.Drawing.Point(412, 268)
+        Me.GroupBox6.Name = "GroupBox6"
+        Me.GroupBox6.Size = New System.Drawing.Size(155, 47)
+        Me.GroupBox6.TabIndex = 37
+        Me.GroupBox6.TabStop = False
+        Me.GroupBox6.Text = "Hora de Incidencia:"
+        '
+        'TB_Hora_Incidencia
+        '
+        Me.TB_Hora_Incidencia.Enabled = False
+        Me.TB_Hora_Incidencia.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TB_Hora_Incidencia.Location = New System.Drawing.Point(6, 19)
+        Me.TB_Hora_Incidencia.Name = "TB_Hora_Incidencia"
+        Me.TB_Hora_Incidencia.Size = New System.Drawing.Size(143, 20)
+        Me.TB_Hora_Incidencia.TabIndex = 4
+        '
+        'Label2
+        '
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(16, 325)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(145, 16)
+        Me.Label2.TabIndex = 38
+        Me.Label2.Text = "Descripcion de Incidencia:"
         '
         'Impresion_Hojas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.Info
-        Me.ClientSize = New System.Drawing.Size(835, 600)
-        Me.Controls.Add(Me.GroupBox2)
+        Me.BackColor = System.Drawing.Color.LightCyan
+        Me.ClientSize = New System.Drawing.Size(1093, 575)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.GroupBox6)
+        Me.Controls.Add(Me.GroupBox5)
+        Me.Controls.Add(Me.GroupBox4)
+        Me.Controls.Add(Me.TB_Descripcion_Incidencia)
         Me.Controls.Add(Me.PictureBox1)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.BTNGuardar)
@@ -387,7 +460,7 @@ Partial Class Impresion_Hojas
         Me.Controls.Add(Me.GBDatos)
         Me.Controls.Add(Me.GBClave)
         Me.Name = "Impresion_Hojas"
-        Me.Text = "Impresion_Hojas"
+        Me.Text = "Impresion de Hojas CETIA"
         Me.GBDatos.ResumeLayout(False)
         Me.GBDatos.PerformLayout()
         Me.GBClave.ResumeLayout(False)
@@ -401,10 +474,15 @@ Partial Class Impresion_Hojas
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBoxMermas.ResumeLayout(False)
         Me.GroupBoxMermas.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
+        Me.GroupBox5.ResumeLayout(False)
+        Me.GroupBox5.PerformLayout()
+        Me.GroupBox6.ResumeLayout(False)
+        Me.GroupBox6.PerformLayout()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents GBDatos As System.Windows.Forms.GroupBox
@@ -439,6 +517,12 @@ Partial Class Impresion_Hojas
     Friend WithEvents Fecha_Registro As System.Windows.Forms.ColumnHeader
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
-    Friend WithEvents GroupBox2 As System.Windows.Forms.GroupBox
+    Friend WithEvents TB_Descripcion_Incidencia As System.Windows.Forms.TextBox
+    Friend WithEvents GroupBox4 As System.Windows.Forms.GroupBox
+    Friend WithEvents TB_Tipo_Incidencia As System.Windows.Forms.TextBox
+    Friend WithEvents GroupBox5 As System.Windows.Forms.GroupBox
+    Friend WithEvents TB_Fecha_Incidencia As System.Windows.Forms.TextBox
+    Friend WithEvents GroupBox6 As System.Windows.Forms.GroupBox
+    Friend WithEvents TB_Hora_Incidencia As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
 End Class

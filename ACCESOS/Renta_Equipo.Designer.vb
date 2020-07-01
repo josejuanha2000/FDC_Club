@@ -1063,9 +1063,10 @@ Partial Class Renta_Equipo
         Me.ListViewHistorial.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.Matricula, Me.Carrera, Me.Semestre, Me.Hojas_Carta, Me.Hojas_Oficio, Me.Hojas_Merma, Me.Fecha_Registro})
         Me.ListViewHistorial.FullRowSelect = True
         Me.ListViewHistorial.GridLines = True
-        Me.ListViewHistorial.Location = New System.Drawing.Point(668, 16)
+        Me.ListViewHistorial.HideSelection = False
+        Me.ListViewHistorial.Location = New System.Drawing.Point(683, 16)
         Me.ListViewHistorial.Name = "ListViewHistorial"
-        Me.ListViewHistorial.Size = New System.Drawing.Size(261, 570)
+        Me.ListViewHistorial.Size = New System.Drawing.Size(492, 569)
         Me.ListViewHistorial.TabIndex = 37
         Me.ListViewHistorial.UseCompatibleStateImageBehavior = False
         Me.ListViewHistorial.View = System.Windows.Forms.View.Details
@@ -1102,8 +1103,7 @@ Partial Class Renta_Equipo
         '
         'SqlConnection1
         '
-        Me.SqlConnection1.ConnectionString = "Data Source=COLMASQLFDC01\FACDYCDES;Initial Catalog=CETIA;Integrated Security=Tru" & _
-    "e"
+        Me.SqlConnection1.ConnectionString = "Data Source=148.234.110.22;Initial Catalog=CETIA;User ID=sa;Password=Facdyc2020"
         Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
         '
         'TBFolio_Recibo
@@ -1137,7 +1137,7 @@ Partial Class Renta_Equipo
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(941, 632)
+        Me.ClientSize = New System.Drawing.Size(1232, 627)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GroupBox5)
         Me.Controls.Add(Me.ListViewHistorial)

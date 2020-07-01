@@ -22,34 +22,36 @@ Partial Class Alta_Bono
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.GroupBox3 = New System.Windows.Forms.GroupBox
-        Me.DateTimeHojas = New System.Windows.Forms.DateTimePicker
-        Me.GBDatos = New System.Windows.Forms.GroupBox
-        Me.CBSemestre = New System.Windows.Forms.ComboBox
-        Me.CBCarrera = New System.Windows.Forms.ComboBox
-        Me.Label5 = New System.Windows.Forms.Label
-        Me.TBTotalH = New System.Windows.Forms.TextBox
-        Me.Label4 = New System.Windows.Forms.Label
-        Me.Label3 = New System.Windows.Forms.Label
-        Me.Label2 = New System.Windows.Forms.Label
-        Me.Label1 = New System.Windows.Forms.Label
-        Me.LblCarrera = New System.Windows.Forms.Label
-        Me.TBNombre = New System.Windows.Forms.TextBox
-        Me.LblNombre = New System.Windows.Forms.Label
-        Me.GBClave = New System.Windows.Forms.GroupBox
-        Me.LblMatricula = New System.Windows.Forms.Label
-        Me.TBMatricula = New System.Windows.Forms.TextBox
-        Me.GroupBoxMermas = New System.Windows.Forms.GroupBox
-        Me.TBFolio = New System.Windows.Forms.TextBox
-        Me.GroupBoxOficio = New System.Windows.Forms.GroupBox
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox
-        Me.TBTotalHoras = New System.Windows.Forms.TextBox
-        Me.GroupBoxCarta = New System.Windows.Forms.GroupBox
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox
-        Me.TBTotalHojas = New System.Windows.Forms.TextBox
-        Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection
-        Me.Button1 = New System.Windows.Forms.Button
-        Me.BtnGuardar = New System.Windows.Forms.Button
+        Me.GroupBox3 = New System.Windows.Forms.GroupBox()
+        Me.DateTimeHojas = New System.Windows.Forms.DateTimePicker()
+        Me.GBDatos = New System.Windows.Forms.GroupBox()
+        Me.CBSemestre = New System.Windows.Forms.ComboBox()
+        Me.CBCarrera = New System.Windows.Forms.ComboBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TBTotalH = New System.Windows.Forms.TextBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.LblCarrera = New System.Windows.Forms.Label()
+        Me.TBNombre = New System.Windows.Forms.TextBox()
+        Me.LblNombre = New System.Windows.Forms.Label()
+        Me.GBClave = New System.Windows.Forms.GroupBox()
+        Me.LblMatricula = New System.Windows.Forms.Label()
+        Me.TBMatricula = New System.Windows.Forms.TextBox()
+        Me.GroupBoxMermas = New System.Windows.Forms.GroupBox()
+        Me.TBFolio = New System.Windows.Forms.TextBox()
+        Me.GroupBoxOficio = New System.Windows.Forms.GroupBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.TBTotalHoras = New System.Windows.Forms.TextBox()
+        Me.GroupBoxCarta = New System.Windows.Forms.GroupBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.TBTotalHojas = New System.Windows.Forms.TextBox()
+        Me.SqlConnection1 = New System.Data.SqlClient.SqlConnection()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BtnGuardar = New System.Windows.Forms.Button()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.GroupBox = New System.Windows.Forms.GroupBox()
         Me.GroupBox3.SuspendLayout()
         Me.GBDatos.SuspendLayout()
         Me.GBClave.SuspendLayout()
@@ -63,7 +65,7 @@ Partial Class Alta_Bono
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.DateTimeHojas)
-        Me.GroupBox3.Location = New System.Drawing.Point(294, 12)
+        Me.GroupBox3.Location = New System.Drawing.Point(368, 39)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(256, 52)
         Me.GroupBox3.TabIndex = 30
@@ -93,7 +95,7 @@ Partial Class Alta_Bono
         Me.GBDatos.Controls.Add(Me.LblNombre)
         Me.GBDatos.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GBDatos.ForeColor = System.Drawing.Color.Navy
-        Me.GBDatos.Location = New System.Drawing.Point(22, 68)
+        Me.GBDatos.Location = New System.Drawing.Point(96, 95)
         Me.GBDatos.Name = "GBDatos"
         Me.GBDatos.Size = New System.Drawing.Size(528, 140)
         Me.GBDatos.TabIndex = 29
@@ -206,7 +208,7 @@ Partial Class Alta_Bono
         '
         Me.GBClave.Controls.Add(Me.LblMatricula)
         Me.GBClave.Controls.Add(Me.TBMatricula)
-        Me.GBClave.Location = New System.Drawing.Point(22, 12)
+        Me.GBClave.Location = New System.Drawing.Point(96, 39)
         Me.GBClave.Name = "GBClave"
         Me.GBClave.Size = New System.Drawing.Size(253, 50)
         Me.GBClave.TabIndex = 28
@@ -235,9 +237,9 @@ Partial Class Alta_Bono
         '
         Me.GroupBoxMermas.Controls.Add(Me.TBFolio)
         Me.GroupBoxMermas.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBoxMermas.Location = New System.Drawing.Point(416, 246)
+        Me.GroupBoxMermas.Location = New System.Drawing.Point(267, 304)
         Me.GroupBoxMermas.Name = "GroupBoxMermas"
-        Me.GroupBoxMermas.Size = New System.Drawing.Size(134, 61)
+        Me.GroupBoxMermas.Size = New System.Drawing.Size(163, 61)
         Me.GroupBoxMermas.TabIndex = 33
         Me.GroupBoxMermas.TabStop = False
         Me.GroupBoxMermas.Text = "FOLIO:"
@@ -245,10 +247,11 @@ Partial Class Alta_Bono
         'TBFolio
         '
         Me.TBFolio.Enabled = False
-        Me.TBFolio.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TBFolio.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TBFolio.Location = New System.Drawing.Point(18, 26)
+        Me.TBFolio.Multiline = True
         Me.TBFolio.Name = "TBFolio"
-        Me.TBFolio.Size = New System.Drawing.Size(88, 20)
+        Me.TBFolio.Size = New System.Drawing.Size(127, 20)
         Me.TBFolio.TabIndex = 8
         Me.TBFolio.Text = "0"
         '
@@ -257,7 +260,7 @@ Partial Class Alta_Bono
         Me.GroupBoxOficio.Controls.Add(Me.PictureBox2)
         Me.GroupBoxOficio.Controls.Add(Me.TBTotalHoras)
         Me.GroupBoxOficio.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBoxOficio.Location = New System.Drawing.Point(194, 236)
+        Me.GroupBoxOficio.Location = New System.Drawing.Point(490, 263)
         Me.GroupBoxOficio.Name = "GroupBoxOficio"
         Me.GroupBoxOficio.Size = New System.Drawing.Size(134, 158)
         Me.GroupBoxOficio.TabIndex = 32
@@ -267,7 +270,7 @@ Partial Class Alta_Bono
         'PictureBox2
         '
         Me.PictureBox2.Image = Global.ACCESOS.My.Resources.Resources.reloj
-        Me.PictureBox2.Location = New System.Drawing.Point(6, 19)
+        Me.PictureBox2.Location = New System.Drawing.Point(6, 58)
         Me.PictureBox2.Name = "PictureBox2"
         Me.PictureBox2.Size = New System.Drawing.Size(122, 96)
         Me.PictureBox2.TabIndex = 8
@@ -277,7 +280,7 @@ Partial Class Alta_Bono
         '
         Me.TBTotalHoras.Enabled = False
         Me.TBTotalHoras.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TBTotalHoras.Location = New System.Drawing.Point(25, 128)
+        Me.TBTotalHoras.Location = New System.Drawing.Point(19, 19)
         Me.TBTotalHoras.Name = "TBTotalHoras"
         Me.TBTotalHoras.Size = New System.Drawing.Size(88, 22)
         Me.TBTotalHoras.TabIndex = 7
@@ -288,7 +291,7 @@ Partial Class Alta_Bono
         Me.GroupBoxCarta.Controls.Add(Me.PictureBox1)
         Me.GroupBoxCarta.Controls.Add(Me.TBTotalHojas)
         Me.GroupBoxCarta.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBoxCarta.Location = New System.Drawing.Point(22, 236)
+        Me.GroupBoxCarta.Location = New System.Drawing.Point(96, 263)
         Me.GroupBoxCarta.Name = "GroupBoxCarta"
         Me.GroupBoxCarta.Size = New System.Drawing.Size(134, 158)
         Me.GroupBoxCarta.TabIndex = 31
@@ -298,9 +301,9 @@ Partial Class Alta_Bono
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.ACCESOS.My.Resources.Resources.Hojas
-        Me.PictureBox1.Location = New System.Drawing.Point(6, 19)
+        Me.PictureBox1.Location = New System.Drawing.Point(5, 47)
         Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(117, 96)
+        Me.PictureBox1.Size = New System.Drawing.Size(122, 107)
         Me.PictureBox1.TabIndex = 7
         Me.PictureBox1.TabStop = False
         '
@@ -308,7 +311,7 @@ Partial Class Alta_Bono
         '
         Me.TBTotalHojas.Enabled = False
         Me.TBTotalHojas.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TBTotalHojas.Location = New System.Drawing.Point(23, 128)
+        Me.TBTotalHojas.Location = New System.Drawing.Point(19, 19)
         Me.TBTotalHojas.Name = "TBTotalHojas"
         Me.TBTotalHojas.Size = New System.Drawing.Size(88, 22)
         Me.TBTotalHojas.TabIndex = 6
@@ -316,14 +319,13 @@ Partial Class Alta_Bono
         '
         'SqlConnection1
         '
-        Me.SqlConnection1.ConnectionString = "Data Source=COLMASQLFDC01\FACDYCDES;Initial Catalog=CETIA;Integrated Security=Tru" & _
-            "e"
+        Me.SqlConnection1.ConnectionString = "Data Source=148.234.110.22;Initial Catalog=CETIA;User ID=sa;Password=Facdyc2020"
         Me.SqlConnection1.FireInfoMessageEventOnUserErrors = False
         '
         'Button1
         '
         Me.Button1.Image = Global.ACCESOS.My.Resources.Resources.boton_salir
-        Me.Button1.Location = New System.Drawing.Point(385, 425)
+        Me.Button1.Location = New System.Drawing.Point(577, 459)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(93, 55)
         Me.Button1.TabIndex = 35
@@ -334,18 +336,27 @@ Partial Class Alta_Bono
         Me.BtnGuardar.BackColor = System.Drawing.SystemColors.Control
         Me.BtnGuardar.Enabled = False
         Me.BtnGuardar.Image = Global.ACCESOS.My.Resources.Resources.boton_guardar2
-        Me.BtnGuardar.Location = New System.Drawing.Point(117, 425)
+        Me.BtnGuardar.Location = New System.Drawing.Point(66, 459)
         Me.BtnGuardar.Name = "BtnGuardar"
         Me.BtnGuardar.Size = New System.Drawing.Size(93, 55)
         Me.BtnGuardar.TabIndex = 34
         Me.BtnGuardar.UseVisualStyleBackColor = False
+        '
+        'GroupBox
+        '
+        Me.GroupBox.Location = New System.Drawing.Point(66, 241)
+        Me.GroupBox.Name = "GroupBox"
+        Me.GroupBox.Size = New System.Drawing.Size(604, 212)
+        Me.GroupBox.TabIndex = 36
+        Me.GroupBox.TabStop = False
+        Me.GroupBox.Text = "Asignacion de Horas/Hojas"
         '
         'Alta_Bono
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.LightGoldenrodYellow
-        Me.ClientSize = New System.Drawing.Size(600, 492)
+        Me.ClientSize = New System.Drawing.Size(709, 580)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.BtnGuardar)
         Me.Controls.Add(Me.GroupBoxMermas)
@@ -354,6 +365,7 @@ Partial Class Alta_Bono
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GBDatos)
         Me.Controls.Add(Me.GBClave)
+        Me.Controls.Add(Me.GroupBox)
         Me.Name = "Alta_Bono"
         Me.Text = "Asignacion de Bono"
         Me.GroupBox3.ResumeLayout(False)
@@ -400,4 +412,6 @@ Partial Class Alta_Bono
     Friend WithEvents Button1 As System.Windows.Forms.Button
     Friend WithEvents PictureBox1 As System.Windows.Forms.PictureBox
     Friend WithEvents PictureBox2 As System.Windows.Forms.PictureBox
+    Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents GroupBox As System.Windows.Forms.GroupBox
 End Class

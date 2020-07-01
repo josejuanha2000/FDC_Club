@@ -114,16 +114,34 @@
     </Compile>
     <Compile Include="Conexion2.vb" />
     <Compile Include="Datos2.vb" />
+    <Compile Include="Fechas_Agendadas.Designer.vb">
+      <DependentUpon>Fechas_Agendadas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Fechas_Agendadas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Login_Impresiones.Designer.vb">
       <DependentUpon>Login_Impresiones.vb</DependentUpon>
     </Compile>
     <Compile Include="Login_Impresiones.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Registro_Clase.Designer.vb">
+      <DependentUpon>Registro_Clase.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registro_Clase.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Registro_Entrada.Designer.vb">
       <DependentUpon>Registro_Entrada.vb</DependentUpon>
     </Compile>
     <Compile Include="Registro_Entrada.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Registro_Incidencias.Designer.vb">
+      <DependentUpon>Registro_Incidencias.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Registro_Incidencias.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Registro_Mermas.Designer.vb">
@@ -181,12 +199,21 @@
       <DependentUpon>Alta_Bono.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Fechas_Agendadas.resx">
+      <DependentUpon>Fechas_Agendadas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login_Impresiones.resx">
       <DependentUpon>Login_Impresiones.vb</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="Registro_Clase.resx">
+      <DependentUpon>Registro_Clase.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Registro_Entrada.resx">
       <DependentUpon>Registro_Entrada.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Registro_Incidencias.resx">
+      <DependentUpon>Registro_Incidencias.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Registro_Mermas.resx">
       <DependentUpon>Registro_Mermas.vb</DependentUpon>

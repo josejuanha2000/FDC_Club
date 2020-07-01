@@ -10,8 +10,10 @@ Public Class Registro_Entrada
     Dim sw_validar_datos As Integer
     Dim sqlequipo As New SqlCommand
     Dim sqldrequipo As SqlDataReader
+    Dim sw_incidencia As Integer = 0
     Private Sub Registro_Entrada_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Call Equipos_SALA_L1()
+
         Me.TBHoraEntrada.Text = TimeOfDay
     End Sub
     Sub buscar_matricula_Bono()
@@ -45,6 +47,35 @@ Public Class Registro_Entrada
             MsgBox(ex.ToString)
         End Try
     End Sub
+   Sub buscar_incidencia_alumno()
+        sw_incidencia = 0
+        Try
+            Me.SqlConnection1.Open()
+            sqlbuscar_matricula.CommandText = CommandType.Text
+            sqlbuscar_matricula.CommandText = ("Select * from Incidencias where incidencias.matricula= '" & TBMatricula.Text & "'")
+            sqlbuscar_matricula.Connection = Me.SqlConnection1
+            sqldrbuscar_matricula = sqlbuscar_matricula.ExecuteReader()
+            sqldrbuscar_matricula.Read()
+            If sqldrbuscar_matricula.HasRows Then
+                sw_incidencia = 1
+                BTNGuardar.Enabled = True
+                Me.TBNombre.Text = sqldrbuscar_matricula("Nombre")
+                Me.TBCarrera.Text = sqldrbuscar_matricula("Carrera")
+                Me.TBSem.Text = sqldrbuscar_matricula("Semestre")
+                ' Me.TB_Tipo_Incidencia.Text = sqldrbuscar_matricula("Tipo_Incidencia")
+                ''Me.TB_Fecha_Incidencia.Text = sqldrbuscar_matricula("Fecha_Incidencia")
+                'Me.TB_Hora_Incidencia.Text = sqldrbuscar_matricula("Hora_Incidencia")
+                MsgBox("Alumno tiene suspendido el servicio por incidencia, Favor de verificar en Descripcion.! ")
+                'Me.TB_Descripcion_Incidencia.Text = sqldrbuscar_matricula("Descripcion_Incidencia")
+            End If
+            sqldrbuscar_matricula.Close()
+            Me.SqlConnection1.Close()
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+    End Sub
+    
+
     Sub Equipos_SALA_L1()
         Try
             Me.SqlConnection1.Open()
@@ -100,22 +131,28 @@ Public Class Registro_Entrada
             'RadioButtonCarta.Focus()
         End If
         If Asc(e.KeyChar) = 13 Then
-            Call buscar_matricula_Bono()
-            If sw_validar_datos = 0 Then
-
-                Call Combo1_gofocus()
-                Me.CBEquipos.Focus()
-                'Me.BTNGuardar.Focus()
+            Call buscar_incidencia_alumno()
+            If sw_incidencia = 1 Then
+                TBMatricula.Focus()
+                Me.BTNGuardar.Enabled = False
+                Return
             Else
-                ' BtnGuardar.Enabled = True
-                ' TBNombre.Enabled = True
-                ' CBSemestre.Enabled = True
-                ' CBCarrera.Enabled = True
-                ' TBTotalHojas.Enabled = True
-                ' TBTotalHoras.Enabled = True
-                ' TBFolio.Enabled = True
-                ' Call LIMPIAR_CAMPOS()
-                ' TBNombre.Focus()
+                Call buscar_matricula_Bono()
+                If sw_validar_datos = 0 Then
+                    Call Combo1_gofocus()
+                    Me.CBEquipos.Focus()
+                    'Me.BTNGuardar.Focus()
+                Else
+                    ' BtnGuardar.Enabled = True
+                    ' TBNombre.Enabled = True
+                    ' CBSemestre.Enabled = True
+                    ' CBCarrera.Enabled = True
+                    ' TBTotalHojas.Enabled = True
+                    ' TBTotalHoras.Enabled = True
+                    ' TBFolio.Enabled = True
+                    ' Call LIMPIAR_CAMPOS()
+                    ' TBNombre.Focus()
+                End If
             End If
         End If
     End Sub
